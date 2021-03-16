@@ -1,6 +1,9 @@
 require_relative "./employee"
 
 class Manager < Employee
+
+    attr_reader :employee
+
     def initialize(name, boss=nil, salary, title)
         @name = name
         @boss = boss
@@ -9,6 +12,30 @@ class Manager < Employee
         @employee = []
     end
 
-    def subordinates(name)
-         @employee << name
+    def employee(name)
+        @employee << name
+    end
+
+    def bonus(multiplier)
+        bonus = employee_salary * multipler
+        bonus
+    end
+
+    def employee_salary
+        
+        totalSalary = 0
+
+        self.employee.each do |employee|
+            if employee.is_a?(Manager)
+                totalSalary += employee.salary + .salary
+            else
+                totalSalary += employee.salary
+            end
+        end
+
+        totalSalary
+    end
+
+
+
 end
