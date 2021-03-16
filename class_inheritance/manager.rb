@@ -5,19 +5,20 @@ class Manager < Employee
     attr_reader :employee
 
     def initialize(name, boss=nil, salary, title)
-        @name = name
-        @boss = boss
-        @salary = salary
-        @title = title
+        # @name = name
+        # @boss = boss
+        # @salary = salary
+        # @title = title
         @employee = []
+        super
     end
 
-    def employee(name)
+    def employees(name)
         @employee << name
     end
 
     def bonus(multiplier)
-        bonus = employee_salary * multipler
+        bonus = employee_salary * multiplier
         bonus
     end
 
@@ -27,7 +28,7 @@ class Manager < Employee
 
         self.employee.each do |employee|
             if employee.is_a?(Manager)
-                totalSalary += employee.salary + .salary
+                totalSalary += employee.salary + employee.employee_salary
             else
                 totalSalary += employee.salary
             end
