@@ -21,7 +21,7 @@ module Slideable
         DIAGONAL_DIRS
     end
 
-    def move    #holds total array
+    def moves    #holds total array
         moves = [] # all_possible moves
         move_dirs.each do |x, y|
             moves << grow_unblocked_move_in_dir(x,y) 

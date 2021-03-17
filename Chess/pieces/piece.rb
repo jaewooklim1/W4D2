@@ -12,15 +12,15 @@ class Piece
     end
 
     def to_s
-        
+        "#{symbol}"
     end
 
     def empty?
-        
+        board[pos].empty?
     end
 
     def valid_moves
-
+        moves
     end
 
     def pos=(val)

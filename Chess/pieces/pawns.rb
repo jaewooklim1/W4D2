@@ -57,11 +57,10 @@ class King < Piece
     possible_attacks = [[x + move_forward_dir, y - 1], [x + move_forward_dir, y + 1]]
     
     possible_attacks.select do |enemy|
-        if board.valid_pos?(enemy) && enemy.color != color
-
+        if board.valid_pos?(enemy) && enemy.color != color && !board.empty?(enemy)
+            new_pos = board[enemy]
         end
     end
-   
 
   end
    
