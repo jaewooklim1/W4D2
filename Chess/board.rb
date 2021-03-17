@@ -1,5 +1,4 @@
-require_relative "./null_pieces.rb"
-require_relative "./piece.rb"
+require_relative "./pieces/piece.rb"
 
 class Board
     attr_reader :rows
