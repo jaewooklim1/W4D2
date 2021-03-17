@@ -27,12 +27,14 @@ class Piece
         @pos = val
     end
 
-    def Symbol
-
+    def symbol
+        raise NotImplementedError
     end
 
     private
-    def move_into_check(end_pos)
+    # def move_into_check(end_pos)
 
-    end
+
+
+    # end
 end
