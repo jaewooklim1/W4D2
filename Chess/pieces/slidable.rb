@@ -1,16 +1,16 @@
 module Slidable
     HORIZONTAL_AND_VERTICAL_DIRS = [
         [0,-1],
-        [0,1],
-        [1,0],
-        [-1,0]
+        [0, 1],
+        [1, 0],
+        [-1, 0]
     ].freeze
 
     DIAGONAL_DIRS = [
-        [1,1], 
-        [1,-1], 
-        [-1,1], 
-        [-1,-1]
+        [1, 1], 
+        [1, -1], 
+        [-1, 1], 
+        [-1, -1]
     ].freeze
 
     def horizonal_and_vertiacal_dirs
@@ -41,10 +41,26 @@ private
         possible_moves = []
 
         x, y = current_pos
-        new_pos = dx, dy    #[(0...8),y] or [x,(0...8)]
-        somethinglooping
-        while new
-    #     increment piece's current row and by dx dy to generate new position
+        new_pos = dx, dy
+        newPos = HORIZONTAL_AND_VERTICAL_DIRS.dup    
+        
+        #[(0...8),y] or [x,(0...8)]
+        HORIZONTAL_AND_VERTICAL_DIRS.each do |move|
+            newPos[0] += move[0][0]
+            newPos[1] += move[0][1]
+            possible_moves << newPos
+            
+        end
+        possible_moves
+    end
+
+
+    #     end
+    #     while new
+
+
+    #     end
+    # #     increment piece's current row and by dx dy to generate new position
     # if the new positions
     #     1. goes off board
     #         -stop looping: dont add
@@ -55,6 +71,6 @@ private
     #         - if opposite color, add position to moves array
     #         - if same color, ignore positon
     # return final array
-    end
+    # end
 
 end
